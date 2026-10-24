@@ -336,7 +336,7 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
   align-items:center;
   overflow:hidden;
   /* Warehouse photo as background */
-  background-image: url('entrepot.png');
+  background-image: url('entrepot-hero.jpg');
   background-size: cover;
   background-position: center 45%;
   background-repeat: no-repeat;
@@ -367,8 +367,9 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
 @media(max-width:900px){
   .hero-content{grid-template-columns:1fr}.hero-stats{display:none}
   .adv-grid{grid-template-columns:repeat(2,1fr)}
-  .products-grid,.pricing-grid,.testi-grid,
+  .products-grid,.pricing-grid,
   .about-grid,.contact-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:repeat(2,1fr)}
   .footer-top{grid-template-columns:1fr 1fr}
   .section-title{font-size:2rem}.hero h1{font-size:2.8rem}
   .counters-grid{grid-template-columns:repeat(2,1fr)}
@@ -376,8 +377,9 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
   .admin-row{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
-  .products-grid,.pricing-grid,.testi-grid,.adv-grid,
+  .products-grid,.pricing-grid,.adv-grid,
   .footer-top{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:repeat(2,1fr)}
   
   .admin-row{grid-template-columns:1fr}
 }
@@ -414,7 +416,7 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
 /* Layer 0 — the warehouse photo, fixed during scroll for parallax feel */
 .hero-bg-photo {
   position: absolute; inset: 0; z-index: 0;
-  background-image: url('entrepot.png');
+  background-image: url('entrepot-hero.jpg');
   background-size: cover;
   background-position: center 45%;
   background-repeat: no-repeat;
@@ -811,10 +813,10 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
 /* ══ CONTACT PAGE — cards layout ══ */
 .contact-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
-@media(max-width:900px){ .contact-cards-grid { grid-template-columns: 1fr; } }
+@media(max-width:900px){ .contact-cards-grid { grid-template-columns: repeat(2, 1fr); } }
 
 .contact-big-card {
   display: flex;
@@ -1022,7 +1024,7 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
 /* ══ CATALOGUE PRODUITS — cartes catégories ══ */
 .cat-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.4rem;
   margin-top: 2rem;
 }
@@ -1174,7 +1176,7 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
   .offres-preview-grid { grid-template-columns: 1fr; }
   .offres-grid-full { grid-template-columns: 1fr; }
   /* Contact cards */
-  .contact-cards-grid { grid-template-columns: 1fr; }
+  .contact-cards-grid { grid-template-columns: repeat(2, 1fr); }
   /* About */
   .about-grid { grid-template-columns: 1fr; }
 }
@@ -1246,78 +1248,198 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
 }
 
 
-/* == MODALS CATEGORIES PRODUITS == */
+/* == MODALS CATEGORIES PRODUITS — PREMIUM == */
+
+/* Overlay */
 .cat-modal {
   display: none;
   position: fixed; inset: 0; z-index: 10000;
   align-items: center; justify-content: center;
+  padding: 1rem;
 }
 .cat-modal.open { display: flex; }
 .cat-modal-overlay {
   position: absolute; inset: 0;
-  background: rgba(10,20,40,0.65);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  animation: modal-fade-in .25s ease;
+  background: rgba(8,16,32,0.78);
+  backdrop-filter: blur(8px) saturate(1.4);
+  -webkit-backdrop-filter: blur(8px) saturate(1.4);
+  animation: modal-bg-in .3s ease both;
 }
+
+/* Box principale — fond navy gradient */
 .cat-modal-box {
   position: relative; z-index: 1;
-  background: #fff; border-radius: 16px;
-  padding: 2rem 2rem 1.5rem;
-  max-width: 480px; width: 90%;
-  max-height: 80vh; overflow-y: auto;
-  animation: modal-slide-in .3s cubic-bezier(.22,1,.36,1);
-  box-shadow: 0 24px 64px rgba(0,0,0,.25);
+  background: linear-gradient(145deg, #1a3a5c 0%, #0f2540 60%, #0a1a30 100%);
+  border-radius: 20px;
+  padding: 0;
+  max-width: 520px; width: 100%;
+  max-height: 85vh; overflow: hidden;
+  display: flex; flex-direction: column;
+  animation: modal-pop-in .35s cubic-bezier(.22,1,.36,1) both;
+  box-shadow: 0 32px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06);
+}
+
+/* Header orange */
+.cat-modal-header {
+  background: linear-gradient(135deg, #f07010 0%, #d45f00 100%);
+  padding: 1.5rem 1.75rem 1.25rem;
+  position: relative;
+  flex-shrink: 0;
+}
+.cat-modal-header::after {
+  content: '';
+  position: absolute; bottom: -1px; left: 0; right: 0; height: 20px;
+  background: linear-gradient(145deg, #1a3a5c 0%, #0f2540 100%);
+  clip-path: ellipse(55% 100% at 50% 100%);
 }
 .cat-modal-close {
-  position: absolute; top: 1rem; right: 1rem;
-  background: none; border: none; cursor: pointer;
-  font-size: 1.2rem; color: #666; padding: .25rem .5rem;
-  border-radius: 6px; line-height: 1;
+  position: absolute; top: .9rem; right: .9rem;
+  background: rgba(255,255,255,.18); border: none; cursor: pointer;
+  font-size: .9rem; color: #fff; width: 28px; height: 28px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  transition: background .15s;
+  z-index: 2;
 }
-.cat-modal-close:hover { background: #f0f0f0; color: #333; }
+.cat-modal-close:hover { background: rgba(255,255,255,.35); }
+
 .cat-modal-title {
-  font-size: 1.4rem; font-weight: 800;
-  color: var(--navy); text-transform: uppercase;
-  letter-spacing: .04em; margin-bottom: .25rem;
+  font-size: 1.55rem; font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: .2rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,.25);
 }
 .cat-modal-subtitle {
-  font-size: .8rem; color: var(--orange);
-  font-weight: 700; text-transform: uppercase;
-  letter-spacing: .08em; margin-bottom: 1.25rem;
+  font-size: .72rem; color: rgba(255,255,255,.75);
+  font-weight: 600; text-transform: uppercase;
+  letter-spacing: .12em;
 }
-.cat-modal-marques { display: flex; flex-direction: column; gap: .9rem; }
+
+/* Corps scrollable */
+.cat-modal-body {
+  padding: 1.5rem 1.75rem 1.75rem;
+  overflow-y: auto;
+  flex: 1;
+}
+.cat-modal-body::-webkit-scrollbar { width: 4px; }
+.cat-modal-body::-webkit-scrollbar-track { background: transparent; }
+.cat-modal-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 2px; }
+
+/* Grille marques */
+.cat-modal-marques {
+  display: flex; flex-direction: column; gap: .7rem;
+}
 .cat-modal-marque {
-  padding: .75rem 1rem;
-  background: #f4f7fc;
-  border-radius: 10px;
-  border-left: 3px solid var(--orange);
+  padding: .9rem 1.1rem;
+  background: rgba(255,255,255,.055);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-left: 3px solid #f07010;
+  transition: background .15s, transform .15s;
+  position: relative; overflow: hidden;
+}
+.cat-modal-marque::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(240,112,16,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cat-modal-marque:hover {
+  background: rgba(255,255,255,.09);
+  transform: translateX(3px);
 }
 .cat-modal-marque-nom {
-  font-weight: 700; font-size: .95rem;
-  color: var(--navy); margin-bottom: .2rem;
+  font-weight: 800; font-size: .92rem;
+  color: #fff; margin-bottom: .25rem;
+  letter-spacing: .01em;
 }
 .cat-modal-marque-desc {
-  font-size: .85rem; color: #555; line-height: 1.5;
+  font-size: .82rem; color: rgba(255,255,255,.62);
+  line-height: 1.55;
 }
-@keyframes modal-fade-in {
+
+/* Animations */
+@keyframes modal-bg-in {
   from { opacity: 0; } to { opacity: 1; }
 }
-@keyframes modal-slide-in {
-  from { opacity: 0; transform: translateY(24px) scale(.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+@keyframes modal-pop-in {
+  from { opacity: 0; transform: translateY(30px) scale(.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 @media (prefers-reduced-motion: reduce) {
   .cat-modal-overlay, .cat-modal-box { animation: none !important; }
 }
-.cat-card { cursor: pointer; }
-.cat-card-hint {
-  font-size: .72rem; color: var(--orange);
-  text-align: right; margin-top: .5rem;
-  opacity: .75; font-weight: 600;
-  letter-spacing: .03em;
-}
 
+/* Carte cliquable — feedback visuel */
+.cat-card {
+  cursor: pointer;
+  position: relative;
+}
+.cat-card:hover { box-shadow: 0 12px 36px rgba(240,112,16,.18), 0 2px 8px rgba(0,0,0,.08); }
+.cat-card:active { transform: scale(.98); }
+
+/* ── Bandeau logos animés (section produits) ── */
+.brands-ticker-wrap {
+  overflow: hidden;
+  padding: .6rem 0;
+  background: rgba(26,58,92,.04);
+  border-top: 1px solid rgba(26,58,92,.08);
+  border-bottom: 1px solid rgba(26,58,92,.08);
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.brands-ticker-wrap::before,
+.brands-ticker-wrap::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; width: 80px; z-index: 1;
+  pointer-events: none;
+}
+.brands-ticker-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #f0f4f8, transparent);
+}
+.brands-ticker-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #f0f4f8, transparent);
+}
+.brands-ticker-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: brands-scroll 28s linear infinite;
+}
+.brands-ticker-track:hover { animation-play-state: paused; }
+.brands-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  padding: .3rem 1.8rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  opacity: .55;
+  white-space: nowrap;
+  transition: opacity .2s;
+  gap: .55rem;
+}
+.brands-ticker-item:hover { opacity: 1; }
+.brands-ticker-item span.dot {
+  display: inline-block;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--orange);
+  opacity: .7;
+}
+@keyframes brands-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brands-ticker-track { animation: none; }
+}
 </style>
 </head>
 <body>
@@ -1482,6 +1604,9 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
         <div class="testi-card reveal d2"><div class="testi-stars"><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span></div><p class="testi-text">« Excellent service, équipe réactive et catalogue très complet. Les prix sont vraiment adaptés aux professionnels. Je recommande sans hésiter. »</p><div class="testi-pending-note">Avis client · En attente de la fiche Google</div></div>
         <div class="testi-card reveal d3"><div class="testi-stars"><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-empty">★</span></div><p class="testi-text">« Fiabilité au rendez-vous depuis 5 ans. La plateforme de commande est simple et les références Bosch sont toujours en stock. »</p><div class="testi-pending-note">Avis client · En attente de la fiche Google</div></div>
       </div>
+      <div class="reveal" style="text-align:center;margin-top:2rem">
+        <a href="https://g.page/r/CfxV8Ngb3kKAEAE/review" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;background:var(--orange);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:.75rem 1.75rem;border-radius:8px;transition:background .2s,transform .2s;box-shadow:0 4px 16px rgba(240,112,16,.3)" onmouseover="this.style.background='#d45f00';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--orange)';this.style.transform=''"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Laisser un avis Google</a>
+      </div>
     </div>
   </section>
 </div>
@@ -1494,158 +1619,142 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
       <p class="section-sub reveal">15 catégories de pièces automobiles multimarques pour tous types d'interventions. Marques distribuées : <strong>Bosch, Sasic, Dayco, Mahle, Cevam, SBS</strong>.</p>
       <div class="cat-grid">
         <div class="cat-card reveal d1" onclick="openCatModal('Freinage')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Freinage')" aria-label="Voir les marques Freinage">
-          <div class="cat-img-zone"><img src="freinage.svg" alt="Freinage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-freinage.jpg" alt="Freinage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg><div class="cat-name">Freinage</div></div>
             <p class="cat-desc">Plaquettes, disques, étriers, maîtres-cylindres, flexibles.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">SBS</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">SBS</span></div>
           </div>
         </div>
         <div class="cat-card reveal d2" onclick="openCatModal('Filtration')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Filtration')" aria-label="Voir les marques Filtration">
-          <div class="cat-img-zone"><img src="filtration.svg" alt="Filtration" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-filtration.jpg" alt="Filtration" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg><div class="cat-name">Filtration</div></div>
             <p class="cat-desc">Filtres huile, air, carburant, habitacle, urée.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">Mahle</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">Mahle</span></div>
           </div>
         </div>
         <div class="cat-card reveal d1" onclick="openCatModal('Huiles-et-Fluides')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Huiles-et-Fluides')" aria-label="Voir les marques Huiles et Fluides">
-          <div class="cat-img-zone"><img src="filtration.svg" alt="Huiles &amp; Fluides" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-huiles.jpg" alt="Huiles &amp; Fluides" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg><div class="cat-name">Huiles &amp; Fluides</div></div>
             <p class="cat-desc">Huiles moteur et boîte, liquide de refroidissement, lave-glace, AdBlue.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Fuchs</span><span class="cat-marque">Excel HDI</span><span class="cat-marque">LECOY</span><span class="cat-marque">DIFRAMA</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Fuchs</span><span class="cat-marque">Excel HDI</span><span class="cat-marque">LECOY</span><span class="cat-marque">DIFRAMA</span></div>
           </div>
         </div>
         <div class="cat-card reveal d3" onclick="openCatModal('Distribution')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Distribution')" aria-label="Voir les marques Distribution">
-          <div class="cat-img-zone"><img src="distribution.svg" alt="Distribution" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-distribution.jpg" alt="Distribution" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4z"/></svg><div class="cat-name">Distribution</div></div>
             <p class="cat-desc">Kits courroie de distribution, chaînes, tendeurs, galets.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Dayco</span><span class="cat-marque">Sasic</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Dayco</span><span class="cat-marque">Sasic</span></div>
           </div>
         </div>
         <div class="cat-card reveal d1" onclick="openCatModal('Suspensions')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Suspensions')" aria-label="Voir les marques Suspensions">
-          <div class="cat-img-zone"><img src="suspensions.svg" alt="Suspensions" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-suspensions.jpg" alt="Suspensions" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><div class="cat-name">Suspensions</div></div>
             <p class="cat-desc">Amortisseurs, ressorts, rotules, biellettes, roulements.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span></div>
           </div>
         </div>
         <div class="cat-card reveal d2" onclick="openCatModal('Electricite')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Electricite')" aria-label="Voir les marques Électricité">
-          <div class="cat-img-zone"><img src="electricite.svg" alt="Électricité" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-electricite.jpg" alt="Électricité" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><div class="cat-name">Électricité</div></div>
             <p class="cat-desc">Alternateurs, démarreurs, capteurs, sondes, relais.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">Cevam</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">Cevam</span></div>
           </div>
         </div>
         <div class="cat-card reveal d3" onclick="openCatModal('Embrayage')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Embrayage')" aria-label="Voir les marques Embrayage">
-          <div class="cat-img-zone"><img src="embrayage.svg" alt="Embrayage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-embrayage.jpg" alt="Embrayage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><div class="cat-name">Embrayage</div></div>
             <p class="cat-desc">Kits embrayage complets, volants bimasse, butées hydrauliques.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span><span class="cat-marque">Dayco</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span><span class="cat-marque">Dayco</span></div>
           </div>
         </div>
         <div class="cat-card reveal d1" onclick="openCatModal('Batteries')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Batteries')" aria-label="Voir les marques Batteries">
-          <div class="cat-img-zone"><img src="batteries.svg" alt="Batteries" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-batteries.jpg" alt="Batteries" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg><div class="cat-name">Batteries</div></div>
             <p class="cat-desc">Batteries 12V, AGM, EFB, lithium pour véhicules start/stop.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span></div>
           </div>
         </div>
         <div class="cat-card reveal d2" onclick="openCatModal('Moteur')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Moteur')" aria-label="Voir les marques Moteur">
-          <div class="cat-img-zone"><img src="moteur.svg" alt="Moteur" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-moteur.jpg" alt="Moteur" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg><div class="cat-name">Moteur</div></div>
             <p class="cat-desc">Joints moteur, pistons, segments, thermostats, pompes à eau.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Mahle</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Mahle</span></div>
           </div>
         </div>
         <div class="cat-card reveal d3" onclick="openCatModal('Refroidissement')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Refroidissement')" aria-label="Voir les marques Refroidissement">
-          <div class="cat-img-zone"><img src="refroidissement.svg" alt="Refroidissement" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-refroidissement.jpg" alt="Refroidissement" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 007-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 007 7z"/></svg><div class="cat-name">Refroidissement</div></div>
             <p class="cat-desc">Radiateurs, pompes à eau, vases d'expansion, durites, ventilateurs.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Mahle</span><span class="cat-marque">Sasic</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Mahle</span><span class="cat-marque">Sasic</span></div>
           </div>
         </div>
         <div class="cat-card reveal d1" onclick="openCatModal('Transmission')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Transmission')" aria-label="Voir les marques Transmission">
-          <div class="cat-img-zone"><img src="transmission.svg" alt="Transmission" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-transmission.jpg" alt="Transmission" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg><div class="cat-name">Transmission</div></div>
             <p class="cat-desc">Cardans, joints de transmission, différentiels, boîtes de vitesses.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span></div>
           </div>
         </div>
         <div class="cat-card reveal d2" onclick="openCatModal('Carrosserie')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Carrosserie')" aria-label="Voir les marques Carrosserie">
-          <div class="cat-img-zone"><img src="carrosserie.svg" alt="Carrosserie" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-carrosserie.jpg" alt="Carrosserie" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><div class="cat-name">Carrosserie</div></div>
             <p class="cat-desc">Rétroviseurs, poignées, charnières, vitres, joints de carrosserie.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques">
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"></div>
           </div>
         </div>
         <div class="cat-card reveal d3" onclick="openCatModal('Echappement')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Echappement')" aria-label="Voir les marques Échappement">
-          <div class="cat-img-zone"><img src="echappement.svg" alt="Échappement" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-echappement.jpg" alt="Échappement" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg><div class="cat-name">Échappement</div></div>
             <p class="cat-desc">Silencieux, catalyseurs, sondes lambda, flexibles d'échappement.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques">
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"></div>
           </div>
         </div>
         <div class="cat-card reveal d1" onclick="openCatModal('Eclairage')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Eclairage')" aria-label="Voir les marques Éclairage">
-          <div class="cat-img-zone"><img src="eclairage.svg" alt="Éclairage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-eclairage.jpg" alt="Éclairage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><div class="cat-name">Éclairage</div></div>
             <p class="cat-desc">Ampoules, phares, feux, projecteurs, ballasts xenon, LED.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span></div>
           </div>
         </div>
         <div class="cat-card reveal d2" onclick="openCatModal('Climatisation')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Climatisation')" aria-label="Voir les marques Climatisation">
-          <div class="cat-img-zone"><img src="climatisation.svg" alt="Climatisation" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-climatisation.jpg" alt="Climatisation" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 013.96-3.28"/><path d="M14.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-3.96-3.28"/></svg><div class="cat-name">Climatisation</div></div>
             <p class="cat-desc">Compresseurs, condenseurs, déshydrateurs, joints, fluides.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques">
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"></div>
           </div>
         </div>
         <div class="cat-card reveal d3" onclick="openCatModal('Vitrage-et-Essuyage')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Vitrage-et-Essuyage')" aria-label="Voir les marques Vitrage & Essuyage">
-          <div class="cat-img-zone"><img src="vitrage.svg" alt="Vitrage & Essuyage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-vitrage.jpg" alt="Vitrage & Essuyage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l4 10H4L8 2z"/><path d="M12 12v10"/><path d="M8 22h8"/><path d="M2 12h20"/></svg><div class="cat-name">Vitrage & Essuyage</div></div>
             <p class="cat-desc">Balais d'essuie-glaces, bras, moteurs, lave-glaces, joints.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span></div>
           </div>
+        </div>
         <div class="cat-card reveal d2" onclick="openCatModal('Pneumatiques')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Pneumatiques')" aria-label="Voir les marques Pneumatiques">
-          <div class="cat-img-zone"><img src="transmission.svg" alt="Pneumatiques" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-img-zone"><img src="cat-pneumatiques.jpg" alt="Pneumatiques" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="2" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="22" y2="12"/></svg><div class="cat-name">Pneumatiques</div></div>
             <p class="cat-desc">Pneus été, hiver, toutes saisons — VL &amp; Utilitaires.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">KLÉBER</span><span class="cat-marque">UNIROYAL</span><span class="cat-marque">SAILUN</span>
-            <div class="cat-card-hint">Voir les marques →</div></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">KLÉBER</span><span class="cat-marque">UNIROYAL</span><span class="cat-marque">SAILUN</span></div>
           </div>
         </div>
-        </div>
+
       </div>
     </div>
   </section>
@@ -1897,6 +2006,15 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
           <div class="contact-big-val">8 rue de Prony</div>
           <div class="contact-big-hint">37300 Joué-lès-Tours<br>Indre-et-Loire (37)</div>
           <div class="contact-big-action">Voir sur Google Maps →</div>
+        </a>
+
+        <!-- Avis Google -->
+        <a href="https://g.page/r/CfxV8Ngb3kKAEAE/review" target="_blank" rel="noopener" class="contact-big-card contact-big-card--orange">
+          <div class="contact-big-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="contact-big-label">Votre avis compte</div>
+          <div class="contact-big-val">Laisser un avis</div>
+          <div class="contact-big-hint">Vous êtes client ? Partagez votre expérience sur Google — ça nous aide énormément.</div>
+          <div class="contact-big-action">Donner mon avis →</div>
         </a>
 
       </div>
@@ -2636,208 +2754,379 @@ document.addEventListener('keydown', function(e) {
 
 </script>
 
+
 <!-- MODALS CATEGORIES -->
 <div class="cat-modal" id="cat-modal-Freinage" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Freinage')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Freinage')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Freinage</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">SBS / Scandinavian Brake Systems</div><div class="cat-modal-marque-desc">Plaquettes et garnitures auto et moto, qualité OE.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Hella</div><div class="cat-modal-marque-desc">Freinage + capteurs d’usure, OE sur constructeurs européens.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Freinage')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Freinage</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">SBS / Scandinavian Brake Systems</div>
+          <div class="cat-modal-marque-desc">Plaquettes et garnitures auto et moto, qualité OE.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Hella</div>
+          <div class="cat-modal-marque-desc">Freinage + capteurs d'usure, OE sur constructeurs européens.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Filtration" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Filtration')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Filtration')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Filtration</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Bosch</div><div class="cat-modal-marque-desc">Filtres air, huile, gasoil et habitacle — leader mondial OE.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Mahle</div><div class="cat-modal-marque-desc">Filtres qualité OE allemand, partenaire constructeurs premium.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Mann Filter</div><div class="cat-modal-marque-desc">85 ans d’expertise, gamme complète, filtration haute performance.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Filtration')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Filtration</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Bosch</div>
+          <div class="cat-modal-marque-desc">Filtres air, huile, gasoil et habitacle — leader mondial OE.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Mahle</div>
+          <div class="cat-modal-marque-desc">Filtres qualité OE allemand, partenaire constructeurs premium.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Mann Filter</div>
+          <div class="cat-modal-marque-desc">85 ans d'expertise, gamme complète, filtration haute performance.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Huiles-et-Fluides" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Huiles-et-Fluides')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Huiles-et-Fluides')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Huiles &amp; Fluides</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Fuchs</div><div class="cat-modal-marque-desc">Lubrifiants spécialité, leader mondial indépendant.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Excel HDI</div><div class="cat-modal-marque-desc">Huiles diesel HDi/TDi et boîte.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Frio Pro OT</div><div class="cat-modal-marque-desc">Liquide refroidissement −37°C.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Euro Act</div><div class="cat-modal-marque-desc">Lubrifiants polyvalents ateliers pros.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">LECOY</div><div class="cat-modal-marque-desc">Lave-glace concentré français, efficace dès −20°C.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">DIFRAMA</div><div class="cat-modal-marque-desc">AdBlue urée 32,5% Euro 6, bidons et fûts.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Huiles-et-Fluides')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Huiles &amp; Fluides</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Fuchs</div>
+          <div class="cat-modal-marque-desc">Lubrifiants spécialité, leader mondial indépendant.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Excel HDI</div>
+          <div class="cat-modal-marque-desc">Huiles diesel HDi/TDi et boîte.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Frio Pro OT</div>
+          <div class="cat-modal-marque-desc">Liquide refroidissement −37°C.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Euro Act</div>
+          <div class="cat-modal-marque-desc">Lubrifiants polyvalents ateliers pros.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">LECOY</div>
+          <div class="cat-modal-marque-desc">Lave-glace concentré français, efficace dès −20°C.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">DIFRAMA</div>
+          <div class="cat-modal-marque-desc">AdBlue urée 32,5% Euro 6, bidons et fûts.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Distribution" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Distribution')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Distribution')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Distribution</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Dayco</div><div class="cat-modal-marque-desc">Kits distribution complets avec pompe à eau — OE Fiat/Renault/PSA/Ford/VW.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Elring</div><div class="cat-modal-marque-desc">Joints moteur allemand, joints de culasse qualité OE.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Distribution')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Distribution</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Dayco</div>
+          <div class="cat-modal-marque-desc">Kits distribution complets avec pompe à eau — OE Fiat/Renault/PSA/Ford/VW.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Elring</div>
+          <div class="cat-modal-marque-desc">Joints moteur allemand, joints de culasse qualité OE.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Suspensions" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Suspensions')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Suspensions')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Suspensions &amp; Châssis</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Sasic</div><div class="cat-modal-marque-desc">Bras triangles, biellettes, rotules.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Febi</div><div class="cat-modal-marque-desc">Pièces châssis et direction allemand, tolérances OE.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Suspensions')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Suspensions &amp; Châssis</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Sasic</div>
+          <div class="cat-modal-marque-desc">Bras triangles, biellettes, rotules.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Febi</div>
+          <div class="cat-modal-marque-desc">Pièces châssis et direction allemand, tolérances OE.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Electricite" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Electricite')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Electricite')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Électricité &amp; Capteurs</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Cevam</div><div class="cat-modal-marque-desc">Démarreurs et alternateurs, large couverture parc européen.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">NGK</div><div class="cat-modal-marque-desc">Sondes lambda, capteurs température, débitmètres OE.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">MTS</div><div class="cat-modal-marque-desc">Modules EGR, capteurs et actionneurs.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Electricite')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Électricité &amp; Capteurs</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Cevam</div>
+          <div class="cat-modal-marque-desc">Démarreurs et alternateurs, large couverture parc européen.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">NGK</div>
+          <div class="cat-modal-marque-desc">Sondes lambda, capteurs température, débitmètres OE.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">MTS</div>
+          <div class="cat-modal-marque-desc">Modules EGR, capteurs et actionneurs.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Embrayage" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Embrayage')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Embrayage')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Embrayage</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Sasic</div><div class="cat-modal-marque-desc">Fabricant français, kits embrayage OE Renault/PSA/Citroën.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Dayco</div><div class="cat-modal-marque-desc">Kits embrayage complets avec courroies et tendeurs.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Embrayage')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Embrayage</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Sasic</div>
+          <div class="cat-modal-marque-desc">Fabricant français, kits embrayage OE Renault/PSA/Citroën.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Dayco</div>
+          <div class="cat-modal-marque-desc">Kits embrayage complets avec courroies et tendeurs.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Batteries" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Batteries')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Batteries')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Batteries</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Mondial Batterie</div><div class="cat-modal-marque-desc">Batteries 12V VL et utilitaires, rapport capacité/prix optimisé.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Batteries')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Batteries</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Mondial Batterie</div>
+          <div class="cat-modal-marque-desc">Batteries 12V VL et utilitaires, rapport capacité/prix optimisé.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Moteur" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Moteur')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Moteur')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Moteur</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Mahle / Behr-Mahle</div><div class="cat-modal-marque-desc">Composants moteur OE qualité allemande — partenaire BMW/Mercedes/VW.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Moteur')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Moteur</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Mahle / Behr-Mahle</div>
+          <div class="cat-modal-marque-desc">Composants moteur OE qualité allemande — partenaire BMW/Mercedes/VW.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Refroidissement" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Refroidissement')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Refroidissement')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Refroidissement</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Mahle / Behr-Mahle</div><div class="cat-modal-marque-desc">Radiateurs, condenseurs — OE BMW/Mercedes/VW Group.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Sasic</div><div class="cat-modal-marque-desc">Pompes à eau et composants refroidissement.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Refroidissement')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Refroidissement</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Mahle / Behr-Mahle</div>
+          <div class="cat-modal-marque-desc">Radiateurs, condenseurs — OE BMW/Mercedes/VW Group.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Sasic</div>
+          <div class="cat-modal-marque-desc">Pompes à eau et composants refroidissement.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Transmission" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Transmission')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Transmission')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Transmission &amp; Direction</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Sasic</div><div class="cat-modal-marque-desc">Fabricant français, cardans/rotules/supports moteur — OE Renault/PSA/Citroën.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Transmission')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Transmission &amp; Direction</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Sasic</div>
+          <div class="cat-modal-marque-desc">Fabricant français, cardans/rotules/supports moteur — OE Renault/PSA/Citroën.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Carrosserie" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Carrosserie')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Carrosserie')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Carrosserie</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Équipement multi-marques</div><div class="cat-modal-marque-desc">Rétroviseurs, poignées, charnières, vitres, joints carrosserie.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Carrosserie')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Carrosserie</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Équipement multi-marques</div>
+          <div class="cat-modal-marque-desc">Rétroviseurs, poignées, charnières, vitres, joints carrosserie.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Echappement" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Echappement')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Echappement')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Échappement</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Équipement multi-marques</div><div class="cat-modal-marque-desc">Silencieux, catalyseurs, sondes lambda, flexibles inox.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Echappement')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Échappement</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Équipement multi-marques</div>
+          <div class="cat-modal-marque-desc">Silencieux, catalyseurs, sondes lambda, flexibles inox.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Eclairage" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Eclairage')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Eclairage')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Éclairage</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Bosch</div><div class="cat-modal-marque-desc">Ampoules et projecteurs, gamme complète auto.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Eclairage')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Éclairage</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Bosch</div>
+          <div class="cat-modal-marque-desc">Ampoules et projecteurs, gamme complète auto.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Climatisation" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Climatisation')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Climatisation')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Climatisation</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Mahle / Behr-Mahle</div><div class="cat-modal-marque-desc">Compresseurs et condenseurs — OE BMW/Mercedes/VW Group.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Climatisation')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Climatisation</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Mahle / Behr-Mahle</div>
+          <div class="cat-modal-marque-desc">Compresseurs et condenseurs — OE BMW/Mercedes/VW Group.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Vitrage-et-Essuyage" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Vitrage-et-Essuyage')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Vitrage-et-Essuyage')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Vitrage &amp; Essuyage</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Bosch</div><div class="cat-modal-marque-desc">Aerotwin et Twin, les plus vendus en Europe.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">Trico</div><div class="cat-modal-marque-desc">Pionnier depuis 1917, balais plats et classiques.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Vitrage-et-Essuyage')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Vitrage &amp; Essuyage</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Bosch</div>
+          <div class="cat-modal-marque-desc">Aerotwin et Twin, les plus vendus en Europe.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Trico</div>
+          <div class="cat-modal-marque-desc">Pionnier depuis 1917, balais plats et classiques.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="cat-modal" id="cat-modal-Pneumatiques" role="dialog" aria-modal="true">
   <div class="cat-modal-overlay" onclick="closeCatModal('Pneumatiques')"></div>
   <div class="cat-modal-box">
-    <button type="button" class="cat-modal-close" onclick="closeCatModal('Pneumatiques')" aria-label="Fermer">✕</button>
-    <div class="cat-modal-title">Pneumatiques</div>
-    <div class="cat-modal-subtitle">Marques distribuées</div>
-    <div class="cat-modal-marques">
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">KLÉBER</div><div class="cat-modal-marque-desc">Groupe Michelin, pneus budget/milieu de gamme français.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">UNIROYAL</div><div class="cat-modal-marque-desc">Groupe Continental, spécialiste pluie Rain Expert.</div></div>
-          <div class="cat-modal-marque"><div class="cat-modal-marque-nom">SAILUN</div><div class="cat-modal-marque-desc">Pneus asiatiques compétitifs, certifiés EU label.</div></div>
+    <div class="cat-modal-header">
+      <button type="button" class="cat-modal-close" onclick="closeCatModal('Pneumatiques')" aria-label="Fermer">✕</button>
+      <div class="cat-modal-title">Pneumatiques</div>
+      <div class="cat-modal-subtitle">Marques distribuées</div>
+    </div>
+    <div class="cat-modal-body">
+      <div class="cat-modal-marques">
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">KLÉBER</div>
+          <div class="cat-modal-marque-desc">Groupe Michelin, pneus budget/milieu de gamme français.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">UNIROYAL</div>
+          <div class="cat-modal-marque-desc">Groupe Continental, spécialiste pluie Rain Expert.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">SAILUN</div>
+          <div class="cat-modal-marque-desc">Pneus asiatiques compétitifs, certifiés EU label.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
