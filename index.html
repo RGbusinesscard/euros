@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="EUROGAM – Distributeur de pièces automobiles multimarques pour professionnels à Joué-lès-Tours (37). Livraison 24h. Marques Bosch, Sasic, Dayco, Mahle, Cevam, SBS.">
+  <meta name="description" content="EUROGAM – Distributeur de pièces automobiles multimarques pour professionnels à Joué-lès-Tours (37). Livraison express. Marques pièces automobiles multimarques.">
   <meta name="keywords" content="pièces auto Joué-lès-Tours, distributeur pièces automobile professionnels, Bosch, Mahle, Dayco, Sasic, Cevam, SBS, Indre-et-Loire">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="EUROGAM – Pièces autos pour les pros – Joué-lès-Tours">
-  <meta property="og:description" content="Distributeur de pièces automobiles multimarques. Livraison express 24h.">
+  <meta property="og:description" content="Distributeur de pièces automobiles multimarques. Livraison express.">
   <meta property="og:image" content="logo.jpg">
   <title>EUROGAM – Pièces autos pour les pros – Joué-lès-Tours (37)</title>
   <link rel="icon" type="image/jpeg" href="logo.jpg">
@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"EUROGAM","description":"Distributeur de pièces automobiles pour professionnels à Joué-lès-Tours.","address":{"@type":"PostalAddress","addressLocality":"Joué-lès-Tours","addressRegion":"Indre-et-Loire","addressCountry":"FR"},"telephone":"02 47 73 96 65","email":"contact@eurogam.fr","openingHours":["Mo-Fr 07:30-18:00","Sa 08:00-12:00"],"areaServed":"Centre-Val de Loire","url":"https://rgbusinesscard.github.io/euros/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"EUROGAM","description":"Distributeur de pièces automobiles pour professionnels à Joué-lès-Tours.","address":{"@type":"PostalAddress","addressLocality":"Joué-lès-Tours","addressRegion":"Indre-et-Loire","addressCountry":"FR"},"telephone":"02 47 73 07 08","email":"contact@groupe-eurogam.fr","openingHours":["Mo-Fr 07:30-18:00","Sa 08:00-12:00"],"areaServed":"Centre-Val de Loire","url":"https://rgbusinesscard.github.io/euros/"}</script>
 
   <style>
 
@@ -95,7 +95,7 @@ nav{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:cente
  
 /* COUNTERS */
 .counters-section{background:var(--blue);padding:3.5rem 0}
-.counters-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.counters-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center}
 .counter-item{position:relative}
 .counter-item::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:1px;background:rgba(255,255,255,.1)}
 .counter-item:last-child::after{display:none}
@@ -105,7 +105,7 @@ nav{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:cente
 /* SECTIONS */
 section{padding:5rem 0}
 .container{max-width:1280px;margin:0 auto;padding:0 2rem}
-.section-label{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem}
 .section-title{font-size:2.6rem;font-weight:800;color:var(--blue);text-transform:uppercase;line-height:1.05;margin-bottom:1.2rem}
 .section-sub{color:var(--gray-dark);font-size:1.05rem;line-height:1.7;max-width:600px;margin-bottom:3rem}
  
@@ -372,7 +372,7 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
   .testi-grid{grid-template-columns:repeat(2,1fr)}
   .footer-top{grid-template-columns:1fr 1fr}
   .section-title{font-size:2rem}.hero h1{font-size:2.8rem}
-  .counters-grid{grid-template-columns:repeat(2,1fr)}
+  .counters-grid{grid-template-columns:repeat(3,1fr)}
   .offres-preview-grid,.offres-grid-full{grid-template-columns:1fr}
   .admin-row{grid-template-columns:1fr 1fr}
 }
@@ -1440,13 +1440,19 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
 @media (prefers-reduced-motion: reduce) {
   .brands-ticker-track { animation: none; }
 }
+
+@keyframes truck-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.truck-anim { animation: truck-bounce 2s ease-in-out infinite; display:inline-block; }
 </style>
 </head>
 <body>
 <!-- TICKER -->
 <div class="ticker-bar">
   <div class="ticker-inner">
-    <span>Livraison express 24h</span><span>+40 ans d'expertise automobile</span><span>Pièces auto multimarques professionnels</span><span>Joué-lès-Tours – Indre-et-Loire</span><span>Bosch · Sasic · Dayco · Mahle · Cevam · SBS</span><span>Offres du moment – Économisez dès aujourd'hui</span><span>Livraison express 24h</span><span>+40 ans d'expertise automobile</span><span>Pièces auto multimarques professionnels</span><span>Joué-lès-Tours – Indre-et-Loire</span><span>Bosch · Sasic · Dayco · Mahle · Cevam · SBS</span><span>Offres du moment – Économisez dès aujourd'hui</span>
+    <span>Livraison express</span><span>+40 ans d'expertise automobile</span><span>Pièces auto multimarques professionnels</span><span>Joué-lès-Tours – Indre-et-Loire</span><span>Sasic · Dayco · Mahle · Cevam · SBS · NGK · Mann Filter · Febi · Fuchs · Elring · Hella</span><span>Offres du moment – Économisez dès aujourd'hui</span><span>Livraison express par France Alliance</span><span>+40 ans d'expertise automobile</span><span>Pièces auto multimarques professionnels</span><span>Joué-lès-Tours – Indre-et-Loire</span><span>Sasic · Dayco · Mahle · Cevam · SBS · NGK · Mann Filter · Febi · Fuchs · Elring · Hella</span><span>Offres du moment – Économisez dès aujourd'hui</span>
   </div>
 </div>
  
@@ -1519,17 +1525,17 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
       <div>
         <div class="hero-badge">Distributeur de pièces auto · Joué-lès-Tours · 37</div>
         <h1>Votre partenaire <em>pièces auto</em> de confiance</h1>
-        <p class="hero-sub">EUROGAM fournit les garages et professionnels de l'automobile en pièces multimarques. Rapidité de livraison, réactivité et expertise au service de votre activité.</p>
+        <p class="hero-sub">EUROGAM fournit les professionnels de l'automobile en pièces multimarques. Rapidité de livraison, réactivité et expertise au service de votre activité.</p>
         <div class="hero-btns">
           <a href="#" class="btn-primary" onclick="showPage('contact')">Nous contacter</a>
-          <a href="#" class="btn-secondary" onclick="showPage('contact')">Demander un devis</a>
+          <a href="#" class="btn-secondary" onclick="showPage('produits')">Voir nos produits</a>
         </div>
       </div>
       <div class="hero-stats">
-        <div class="stat-card"><div class="stat-num">24h</div><div class="stat-label">Délai de livraison</div></div>
+        <div class="stat-card"><div class="stat-num"><span class="truck-anim"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span></div><div class="stat-label">Livraison par France Alliance</div></div>
         <div class="stat-card"><div class="stat-num">40+</div><div class="stat-label">Ans d'expertise</div></div>
-        <div class="stat-card"><div class="stat-num">500+</div><div class="stat-label">Références disponibles</div></div>
-        <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Marques premium</div></div>
+        <div class="stat-card"><div class="stat-num">12&nbsp;000+</div><div class="stat-label">Références disponibles</div></div>
+        <div class="stat-card"><div class="stat-num">18+</div><div class="stat-label">Marques distribuées</div></div>
       </div>
     </div>
   </section>
@@ -1539,9 +1545,9 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
     <div class="container">
       <div class="counters-grid">
         <div class="counter-item reveal"><span class="counter-num" data-target="40" data-suffix="+">0</span><div class="counter-label">Années d'expérience</div></div>
-        <div class="counter-item reveal d1"><span class="counter-num" data-target="500" data-suffix="+">0</span><div class="counter-label">Références produits</div></div>
-        <div class="counter-item reveal d2"><span class="counter-num" data-target="6" data-suffix="">0</span><div class="counter-label">Marques partenaires</div></div>
-        <div class="counter-item reveal d3"><span class="counter-num" data-target="300" data-suffix="+">0</span><div class="counter-label">Clients professionnels satisfaits</div></div>
+        <div class="counter-item reveal d1"><span class="counter-num" data-target="12000" data-suffix="+">0</span><div class="counter-label">Références produits</div></div>
+        <div class="counter-item reveal d2"><span class="counter-num" data-target="18" data-suffix="+">0</span><div class="counter-label">Marques distribuées</div></div>
+        
       </div>
     </div>
   </section>
@@ -1551,9 +1557,9 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
       <div class="section-label reveal">Pourquoi EUROGAM</div>
       <h2 class="section-title reveal">Des avantages concrets<br>pour votre garage</h2>
       <div class="adv-grid">
-        <div class="adv-card reveal d1"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="adv-title">Livraison Express</div><p class="adv-text">Pièces disponibles en 24h. Réduisez le temps d'immobilisation des véhicules et augmentez votre rentabilité.</p></div>
+        <div class="adv-card reveal d1"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="adv-title">Livraison Express</div><p class="adv-text">Livraison express par France Alliance. Commandez avant 11h30, livraison l'après-midi.</p></div>
         <div class="adv-card reveal d2"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg></div><div class="adv-title">Proximité Locale</div><p class="adv-text">Ancré à Joué-lès-Tours, nous connaissons les besoins des professionnels de la région Centre-Val de Loire.</p></div>
-        <div class="adv-card reveal d3"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div class="adv-title">Marques de Référence</div><p class="adv-text">Bosch, Sasic, Dayco, Mahle, Cevam, SBS : uniquement des équipementiers reconnus pour leurs standards de qualité.</p></div>
+        <div class="adv-card reveal d3"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div class="adv-title">Équipementiers première monte</div><p class="adv-text">Sasic, Dayco, Mahle, NGK, Cevam, Hella : uniquement des équipementiers première monte reconnus pour leurs standards de qualité.</p></div>
         <div class="adv-card reveal d4"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><path d="M12 6v2M12 16v2M8 12h8"/></svg></div><div class="adv-title">Tarifs Professionnels</div><p class="adv-text">Un réseau fournisseurs solide. Des prix compétitifs adaptés aux volumes des professionnels.</p></div>
       </div>
     </div>
@@ -1575,22 +1581,46 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
     <div class="container">
       <div class="section-label" style="color:var(--orange)">Nos Marques</div>
       <h2 class="section-title reveal">Partenaires de confiance</h2>
-      <p class="section-sub reveal">6 marques de référence mondiale — distribuées exclusivement par EUROGAM pour garantir qualité et disponibilité.</p>
+      <p class="section-sub reveal">6 équipementiers première monte mondiale — distribuées exclusivement par EUROGAM pour garantir qualité et disponibilité.</p>
     </div>
     <div class="brands-carousel-wrap">
       <div class="brands-carousel">
-        <div class="brand-card"><span class="brand-logo-text">BOSCH</span><div class="brand-desc">Électronique & moteur</div></div>
-        <div class="brand-card"><span class="brand-logo-text">SASIC</span><div class="brand-desc">Transmission</div></div>
+        <div class="brand-card"><span class="brand-logo-text">SASIC</span><div class="brand-desc">Transmission & suspensions</div></div>
         <div class="brand-card"><span class="brand-logo-text">DAYCO</span><div class="brand-desc">Distribution</div></div>
         <div class="brand-card"><span class="brand-logo-text">MAHLE</span><div class="brand-desc">Filtration & thermique</div></div>
-        <div class="brand-card"><span class="brand-logo-text">CEVAM</span><div class="brand-desc">Électricité auto</div></div>
+        <div class="brand-card"><span class="brand-logo-text">CEVAM</span><div class="brand-desc">Machines tournantes</div></div>
         <div class="brand-card"><span class="brand-logo-text">SBS</span><div class="brand-desc">Freinage</div></div>
-        <div class="brand-card"><span class="brand-logo-text">BOSCH</span><div class="brand-desc">Électronique & moteur</div></div>
-        <div class="brand-card"><span class="brand-logo-text">SASIC</span><div class="brand-desc">Transmission</div></div>
+        <div class="brand-card"><span class="brand-logo-text">NGK</span><div class="brand-desc">Allumage & filtration</div></div>
+        <div class="brand-card"><span class="brand-logo-text">MANN FILTER</span><div class="brand-desc">Filtration</div></div>
+        <div class="brand-card"><span class="brand-logo-text">FEBI</span><div class="brand-desc">Châssis & direction</div></div>
+        <div class="brand-card"><span class="brand-logo-text">FUCHS</span><div class="brand-desc">Lubrifiants</div></div>
+        <div class="brand-card"><span class="brand-logo-text">ELRING</span><div class="brand-desc">Joints moteur</div></div>
+        <div class="brand-card"><span class="brand-logo-text">HELLA</span><div class="brand-desc">Éclairage & essuyage</div></div>
+        <div class="brand-card"><span class="brand-logo-text">BOSCH</span><div class="brand-desc">Allumage & essuyage</div></div>
+        <div class="brand-card"><span class="brand-logo-text">KLÉBER</span><div class="brand-desc">Pneumatiques</div></div>
+        <div class="brand-card"><span class="brand-logo-text">UNIROYAL</span><div class="brand-desc">Pneumatiques</div></div>
+        <div class="brand-card"><span class="brand-logo-text">SAILUN</span><div class="brand-desc">Pneumatiques</div></div>
+        <div class="brand-card"><span class="brand-logo-text">DIFRAMA</span><div class="brand-desc">Huiles & fluides</div></div>
+        <div class="brand-card"><span class="brand-logo-text">LECOY</span><div class="brand-desc">Huiles & fluides</div></div>
+        <div class="brand-card"><span class="brand-logo-text">NTS</span><div class="brand-desc">Échappement</div></div>
+        <div class="brand-card"><span class="brand-logo-text">SASIC</span><div class="brand-desc">Transmission & suspensions</div></div>
         <div class="brand-card"><span class="brand-logo-text">DAYCO</span><div class="brand-desc">Distribution</div></div>
         <div class="brand-card"><span class="brand-logo-text">MAHLE</span><div class="brand-desc">Filtration & thermique</div></div>
-        <div class="brand-card"><span class="brand-logo-text">CEVAM</span><div class="brand-desc">Électricité auto</div></div>
+        <div class="brand-card"><span class="brand-logo-text">CEVAM</span><div class="brand-desc">Machines tournantes</div></div>
         <div class="brand-card"><span class="brand-logo-text">SBS</span><div class="brand-desc">Freinage</div></div>
+        <div class="brand-card"><span class="brand-logo-text">NGK</span><div class="brand-desc">Allumage & filtration</div></div>
+        <div class="brand-card"><span class="brand-logo-text">MANN FILTER</span><div class="brand-desc">Filtration</div></div>
+        <div class="brand-card"><span class="brand-logo-text">FEBI</span><div class="brand-desc">Châssis & direction</div></div>
+        <div class="brand-card"><span class="brand-logo-text">FUCHS</span><div class="brand-desc">Lubrifiants</div></div>
+        <div class="brand-card"><span class="brand-logo-text">ELRING</span><div class="brand-desc">Joints moteur</div></div>
+        <div class="brand-card"><span class="brand-logo-text">HELLA</span><div class="brand-desc">Éclairage & essuyage</div></div>
+        <div class="brand-card"><span class="brand-logo-text">BOSCH</span><div class="brand-desc">Allumage & essuyage</div></div>
+        <div class="brand-card"><span class="brand-logo-text">KLÉBER</span><div class="brand-desc">Pneumatiques</div></div>
+        <div class="brand-card"><span class="brand-logo-text">UNIROYAL</span><div class="brand-desc">Pneumatiques</div></div>
+        <div class="brand-card"><span class="brand-logo-text">SAILUN</span><div class="brand-desc">Pneumatiques</div></div>
+        <div class="brand-card"><span class="brand-logo-text">DIFRAMA</span><div class="brand-desc">Huiles & fluides</div></div>
+        <div class="brand-card"><span class="brand-logo-text">LECOY</span><div class="brand-desc">Huiles & fluides</div></div>
+        <div class="brand-card"><span class="brand-logo-text">NTS</span><div class="brand-desc">Échappement</div></div>
       </div>
     </div>
   </section>
@@ -1602,7 +1632,7 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
       <div class="testi-grid">
         <div class="testi-card reveal d1"><div class="testi-stars"><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span></div><p class="testi-text">« Avec EUROGAM, les pièces arrivent le lendemain matin. Pour notre atelier, c'est indispensable. Fini les véhicules immobilisés faute de pièces ! »</p><div class="testi-pending-note">Avis client · En attente de la fiche Google</div></div>
         <div class="testi-card reveal d2"><div class="testi-stars"><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span></div><p class="testi-text">« Excellent service, équipe réactive et catalogue très complet. Les prix sont vraiment adaptés aux professionnels. Je recommande sans hésiter. »</p><div class="testi-pending-note">Avis client · En attente de la fiche Google</div></div>
-        <div class="testi-card reveal d3"><div class="testi-stars"><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-empty">★</span></div><p class="testi-text">« Fiabilité au rendez-vous depuis 5 ans. La plateforme de commande est simple et les références Bosch sont toujours en stock. »</p><div class="testi-pending-note">Avis client · En attente de la fiche Google</div></div>
+        <div class="testi-card reveal d3"><div class="testi-stars"><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-empty">★</span></div><p class="testi-text">« Fiabilité au rendez-vous depuis 5 ans. La plateforme de commande est simple et les références sont toujours disponibles. »</p><div class="testi-pending-note">Avis client · En attente de la fiche Google</div></div>
       </div>
       <div class="reveal" style="text-align:center;margin-top:2rem">
         <a href="https://g.page/r/CfxV8Ngb3kKAEAE/review" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem;background:var(--orange);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:.75rem 1.75rem;border-radius:8px;transition:background .2s,transform .2s;box-shadow:0 4px 16px rgba(240,112,16,.3)" onmouseover="this.style.background='#d45f00';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--orange)';this.style.transform=''"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Laisser un avis Google</a>
@@ -1616,30 +1646,30 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
   <section class="page-banner"><div class="container"><div class="section-label" style="color:var(--orange)">Catalogue</div><h1 class="section-title" style="color:#fff;margin:0">Nos Produits</h1></div></section>
   <section>
     <div class="container">
-      <p class="section-sub reveal">15 catégories de pièces automobiles multimarques pour tous types d'interventions. Marques distribuées : <strong>Bosch, Sasic, Dayco, Mahle, Cevam, SBS</strong>.</p>
+      <p class="section-sub reveal">Plusieurs gammes de pièces automobiles multimarques pour tous types d'interventions. Marques distribuées : <strong>Sasic, Dayco, Mahle, NGK, Mann Filter, Cevam, Febi, Fuchs, Elring, Hella, SBS</strong>.</p>
       <div class="cat-grid">
-        <div class="cat-card reveal d1" onclick="openCatModal('Freinage')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Freinage')" aria-label="Voir les marques Freinage">
-          <div class="cat-img-zone"><img src="cat-freinage.jpg" alt="Freinage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
-          <div class="cat-body">
-            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg><div class="cat-name">Freinage</div></div>
-            <p class="cat-desc">Plaquettes, disques, étriers, maîtres-cylindres, flexibles.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">SBS</span></div>
-          </div>
-        </div>
         <div class="cat-card reveal d2" onclick="openCatModal('Filtration')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Filtration')" aria-label="Voir les marques Filtration">
           <div class="cat-img-zone"><img src="cat-filtration.jpg" alt="Filtration" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg><div class="cat-name">Filtration</div></div>
             <p class="cat-desc">Filtres huile, air, carburant, habitacle, urée.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">Mahle</span></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Mahle</span><span class="cat-marque">Mann Filter</span></div>
+          </div>
+        </div>
+        <div class="cat-card reveal d1" onclick="openCatModal('Freinage')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Freinage')" aria-label="Voir les marques Freinage">
+          <div class="cat-img-zone"><img src="cat-freinage.jpg" alt="Freinage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg><div class="cat-name">Freinage</div></div>
+            <p class="cat-desc">Plaquettes, disques, étriers, maîtres-cylindres, flexibles.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">SBS</span><span class="cat-marque">Hella</span></div>
           </div>
         </div>
         <div class="cat-card reveal d1" onclick="openCatModal('Huiles-et-Fluides')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Huiles-et-Fluides')" aria-label="Voir les marques Huiles et Fluides">
           <div class="cat-img-zone"><img src="cat-huiles.jpg" alt="Huiles &amp; Fluides" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
-            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg><div class="cat-name">Huiles &amp; Fluides</div></div>
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg><div class="cat-name">Huiles</div></div>
             <p class="cat-desc">Huiles moteur et boîte, liquide de refroidissement, lave-glace, AdBlue.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Fuchs</span><span class="cat-marque">Excel HDI</span><span class="cat-marque">LECOY</span><span class="cat-marque">DIFRAMA</span></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Fuchs</span><span class="cat-marque">Fuchs Labo</span></div>
           </div>
         </div>
         <div class="cat-card reveal d3" onclick="openCatModal('Distribution')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Distribution')" aria-label="Voir les marques Distribution">
@@ -1653,17 +1683,17 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
         <div class="cat-card reveal d1" onclick="openCatModal('Suspensions')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Suspensions')" aria-label="Voir les marques Suspensions">
           <div class="cat-img-zone"><img src="cat-suspensions.jpg" alt="Suspensions" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
-            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><div class="cat-name">Suspensions</div></div>
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><div class="cat-name">Suspensions &amp; Train avant</div></div>
             <p class="cat-desc">Amortisseurs, ressorts, rotules, biellettes, roulements.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">ZF</span><span class="cat-marque">NK</span><span class="cat-marque">Sasic</span><span class="cat-marque">Febi</span></div>
           </div>
         </div>
         <div class="cat-card reveal d2" onclick="openCatModal('Electricite')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Electricite')" aria-label="Voir les marques Électricité">
           <div class="cat-img-zone"><img src="cat-electricite.jpg" alt="Électricité" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
-            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><div class="cat-name">Électricité</div></div>
-            <p class="cat-desc">Alternateurs, démarreurs, capteurs, sondes, relais.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">Cevam</span></div>
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><div class="cat-name">Allumage</div></div>
+            <p class="cat-desc">Machines tournantes, bougies allumage et préchauffage, faisceaux.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Cevam</span><span class="cat-marque">NGK</span></div>
           </div>
         </div>
         <div class="cat-card reveal d3" onclick="openCatModal('Embrayage')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Embrayage')" aria-label="Voir les marques Embrayage">
@@ -1671,15 +1701,24 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg><div class="cat-name">Embrayage</div></div>
             <p class="cat-desc">Kits embrayage complets, volants bimasse, butées hydrauliques.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span><span class="cat-marque">Dayco</span></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span><span class="cat-marque">ZF</span></div>
           </div>
         </div>
+        <div class="cat-card reveal d2" onclick="openCatModal('Pneumatiques')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Pneumatiques')" aria-label="Voir les marques Pneumatiques">
+          <div class="cat-img-zone"><img src="cat-pneumatiques.jpg" alt="Pneumatiques" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
+          <div class="cat-body">
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="2" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="22" y2="12"/></svg><div class="cat-name">Pneumatiques</div></div>
+            <p class="cat-desc">Pneus été, hiver, toutes saisons — tourisme et utilitaires.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">KLÉBER</span><span class="cat-marque">UNIROYAL</span><span class="cat-marque">SAILUN</span></div>
+          </div>
+        </div>
+
         <div class="cat-card reveal d1" onclick="openCatModal('Batteries')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Batteries')" aria-label="Voir les marques Batteries">
           <div class="cat-img-zone"><img src="cat-batteries.jpg" alt="Batteries" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg><div class="cat-name">Batteries</div></div>
-            <p class="cat-desc">Batteries 12V, AGM, EFB, lithium pour véhicules start/stop.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span></div>
+            <p class="cat-desc">Batteries 12V, AGM, EFB pour véhicules start/stop et utilitaires.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"></div>
           </div>
         </div>
         <div class="cat-card reveal d2" onclick="openCatModal('Moteur')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Moteur')" aria-label="Voir les marques Moteur">
@@ -1687,13 +1726,13 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg><div class="cat-name">Moteur</div></div>
             <p class="cat-desc">Joints moteur, pistons, segments, thermostats, pompes à eau.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Mahle</span></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Mahle</span><span class="cat-marque">Elring</span></div>
           </div>
         </div>
         <div class="cat-card reveal d3" onclick="openCatModal('Refroidissement')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Refroidissement')" aria-label="Voir les marques Refroidissement">
           <div class="cat-img-zone"><img src="cat-refroidissement.jpg" alt="Refroidissement" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
-            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 007-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 007 7z"/></svg><div class="cat-name">Refroidissement</div></div>
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 007-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 007 7z"/></svg><div class="cat-name">Clim &amp; Refroidissement</div></div>
             <p class="cat-desc">Radiateurs, pompes à eau, vases d'expansion, durites, ventilateurs.</p>
             <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Mahle</span><span class="cat-marque">Sasic</span></div>
           </div>
@@ -1706,20 +1745,13 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
             <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Sasic</span></div>
           </div>
         </div>
-        <div class="cat-card reveal d2" onclick="openCatModal('Carrosserie')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Carrosserie')" aria-label="Voir les marques Carrosserie">
-          <div class="cat-img-zone"><img src="cat-carrosserie.jpg" alt="Carrosserie" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
-          <div class="cat-body">
-            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><div class="cat-name">Carrosserie</div></div>
-            <p class="cat-desc">Rétroviseurs, poignées, charnières, vitres, joints de carrosserie.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"></div>
-          </div>
-        </div>
+
         <div class="cat-card reveal d3" onclick="openCatModal('Echappement')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Echappement')" aria-label="Voir les marques Échappement">
           <div class="cat-img-zone"><img src="cat-echappement.jpg" alt="Échappement" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg><div class="cat-name">Échappement</div></div>
             <p class="cat-desc">Silencieux, catalyseurs, sondes lambda, flexibles d'échappement.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">NTS</span></div>
           </div>
         </div>
         <div class="cat-card reveal d1" onclick="openCatModal('Eclairage')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Eclairage')" aria-label="Voir les marques Éclairage">
@@ -1727,31 +1759,16 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
           <div class="cat-body">
             <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><div class="cat-name">Éclairage</div></div>
             <p class="cat-desc">Ampoules, phares, feux, projecteurs, ballasts xenon, LED.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span></div>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Hella</span></div>
           </div>
         </div>
-        <div class="cat-card reveal d2" onclick="openCatModal('Climatisation')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Climatisation')" aria-label="Voir les marques Climatisation">
-          <div class="cat-img-zone"><img src="cat-climatisation.jpg" alt="Climatisation" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
-          <div class="cat-body">
-            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 013.96-3.28"/><path d="M14.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-3.96-3.28"/></svg><div class="cat-name">Climatisation</div></div>
-            <p class="cat-desc">Compresseurs, condenseurs, déshydrateurs, joints, fluides.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"></div>
-          </div>
-        </div>
+
         <div class="cat-card reveal d3" onclick="openCatModal('Vitrage-et-Essuyage')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Vitrage-et-Essuyage')" aria-label="Voir les marques Vitrage & Essuyage">
           <div class="cat-img-zone"><img src="cat-vitrage.jpg" alt="Vitrage & Essuyage" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
           <div class="cat-body">
-            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l4 10H4L8 2z"/><path d="M12 12v10"/><path d="M8 22h8"/><path d="M2 12h20"/></svg><div class="cat-name">Vitrage & Essuyage</div></div>
-            <p class="cat-desc">Balais d'essuie-glaces, bras, moteurs, lave-glaces, joints.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span></div>
-          </div>
-        </div>
-        <div class="cat-card reveal d2" onclick="openCatModal('Pneumatiques')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openCatModal('Pneumatiques')" aria-label="Voir les marques Pneumatiques">
-          <div class="cat-img-zone"><img src="cat-pneumatiques.jpg" alt="Pneumatiques" class="cat-img" onerror="this.parentNode.classList.add('cat-img-zone--empty')"></div>
-          <div class="cat-body">
-            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="2" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="22" y2="12"/></svg><div class="cat-name">Pneumatiques</div></div>
-            <p class="cat-desc">Pneus été, hiver, toutes saisons — VL &amp; Utilitaires.</p>
-            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">KLÉBER</span><span class="cat-marque">UNIROYAL</span><span class="cat-marque">SAILUN</span></div>
+            <div class="cat-icon-row"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l4 10H4L8 2z"/><path d="M12 12v10"/><path d="M8 22h8"/><path d="M2 12h20"/></svg><div class="cat-name">Essuyage</div></div>
+            <p class="cat-desc">Balais d'essuie-glaces, bras, moteurs, lave-glaces.</p>
+            <div class="cat-marques-label">Marques associées</div><div class="cat-marques"><span class="cat-marque">Bosch</span><span class="cat-marque">Hella</span></div>
           </div>
         </div>
 
@@ -1885,61 +1902,51 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
   <section>
     <div class="container">
       <p class="section-sub reveal" style="max-width:660px">
-        7 collaborateurs passionnés par l'automobile à votre service.
-        Experts en pièces détachées, ils sont là pour vous conseiller et vous livrer au plus vite.
+        7 collaborateurs à votre service.
+        Experts en pièces détachées, ils sont là pour vous conseiller.
       </p>
 
       <div class="equipe-grid" id="equipe-grid">
-        <div class="equipe-section-title reveal">Direction générale</div>
         <div class="equipe-card reveal d1">
           <div class="equipe-info">
             <div class="equipe-name">[NOM À RENSEIGNER]</div>
-            <div class="equipe-poste">Directeur Général</div>
-            <div class="equipe-desc">Pilote la stratégie et le développement d'EUROGAM.</div>
-          </div>
-        </div>
-        <div class="equipe-section-title reveal" style="margin-top:2rem">Commerce</div>
-        <div class="equipe-card reveal d1">
-          <div class="equipe-info">
-            <div class="equipe-name">[NOM À RENSEIGNER]</div>
-            <div class="equipe-poste">Responsable Commercial</div>
-            <div class="equipe-desc">Suivi des comptes clients et développement du portefeuille.</div>
-          </div>
-        </div>
-        <div class="equipe-section-title reveal" style="margin-top:2rem">Logistique, Entrepôt &amp; Gestion</div>
-        <div class="equipe-card reveal d1">
-          <div class="equipe-info">
-            <div class="equipe-name">[NOM À RENSEIGNER]</div>
-            <div class="equipe-poste">Magasinier</div>
-            <div class="equipe-desc">Réception, contrôle et rangement des pièces en entrepôt.</div>
+            <div class="equipe-desc">À votre service.</div>
           </div>
         </div>
         <div class="equipe-card reveal d2">
           <div class="equipe-info">
             <div class="equipe-name">[NOM À RENSEIGNER]</div>
-            <div class="equipe-poste">Magasinier</div>
-            <div class="equipe-desc">Réception, contrôle et rangement des pièces en entrepôt.</div>
+            <div class="equipe-desc">À votre service.</div>
           </div>
         </div>
         <div class="equipe-card reveal d3">
           <div class="equipe-info">
             <div class="equipe-name">[NOM À RENSEIGNER]</div>
-            <div class="equipe-poste">Magasinier</div>
-            <div class="equipe-desc">Réception, contrôle et rangement des pièces en entrepôt.</div>
+            <div class="equipe-desc">À votre service.</div>
           </div>
         </div>
         <div class="equipe-card reveal d1">
           <div class="equipe-info">
             <div class="equipe-name">[NOM À RENSEIGNER]</div>
-            <div class="equipe-poste">Responsable Comptabilité</div>
-            <div class="equipe-desc">Gestion administrative, facturation et suivi comptable.</div>
+            <div class="equipe-desc">À votre service.</div>
           </div>
         </div>
         <div class="equipe-card reveal d2">
           <div class="equipe-info">
             <div class="equipe-name">[NOM À RENSEIGNER]</div>
-            <div class="equipe-poste">Préparateur de Commandes</div>
-            <div class="equipe-desc">Préparation et expédition des commandes clients.</div>
+            <div class="equipe-desc">À votre service.</div>
+          </div>
+        </div>
+        <div class="equipe-card reveal d3">
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-desc">À votre service.</div>
+          </div>
+        </div>
+        <div class="equipe-card reveal d1">
+          <div class="equipe-info">
+            <div class="equipe-name">[NOM À RENSEIGNER]</div>
+            <div class="equipe-desc">À votre service.</div>
           </div>
         </div>
       </div><!-- end equipe-grid -->
@@ -1949,7 +1956,7 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
         <div style="flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
         <div>
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:.3rem">Vous souhaitez rejoindre l'équipe ?</div>
-          <div style="font-size:.9rem;opacity:.85">Envoyez votre candidature à <strong style="color:#fff">contact@eurogam.fr</strong> — nous recrutons des passionnés d'automobile.</div>
+          <div style="font-size:.9rem;opacity:.85">Envoyez votre candidature à <strong style="color:#fff">contact@groupe-eurogam.fr</strong> — nous recrutons des passionnés d'automobile.</div>
         </div>
       </div>
 
@@ -1973,7 +1980,7 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
       <div class="reveal" style="max-width:640px;margin-bottom:3rem">
         <p style="font-size:1.05rem;color:var(--gray-dark);line-height:1.75">
           Notre équipe est disponible du lundi au vendredi pour répondre à toutes vos demandes
-          de devis, d'adhésion ou d'information produit. Contactez-nous directement par téléphone,
+          de devis, d'ouverture de compte ou d'information produit. Contactez-nous directement par téléphone,
           email ou en passant à nos locaux.
         </p>
       </div>
@@ -1982,19 +1989,19 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
       <div class="contact-cards-grid reveal">
 
         <!-- Téléphone -->
-        <a href="tel:0247739665" class="contact-big-card">
+        <a href="tel:0247730708" class="contact-big-card">
           <div class="contact-big-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
           <div class="contact-big-label">Téléphone</div>
-          <div class="contact-big-val">02 47 73 96 65</div>
-          <div class="contact-big-hint">[HORAIRES À RENSEIGNER]</div>
+          <div class="contact-big-val">02 47 73 07 08</div>
+          <div class="contact-big-hint">Lun–Ven · 8h–12h et 13h30–17h30</div>
           <div class="contact-big-action">Appeler maintenant →</div>
         </a>
 
         <!-- Email -->
-        <a href="mailto:[EMAIL À RENSEIGNER]" class="contact-big-card contact-big-card--orange">
+        <a href="mailto:contact@groupe-eurogam.fr" class="contact-big-card contact-big-card--orange">
           <div class="contact-big-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></div>
           <div class="contact-big-label">Email</div>
-          <div class="contact-big-val">[ADRESSE EMAIL À RENSEIGNER]</div>
+          <div class="contact-big-val">contact@groupe-eurogam.fr</div>
           <div class="contact-big-hint">Réponse sous 24h ouvrées</div>
           <div class="contact-big-action">Envoyer un email →</div>
         </a>
@@ -2024,13 +2031,12 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
         <div class="contact-hours-block">
           <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;color:var(--blue);text-transform:uppercase;margin-bottom:1.2rem">Horaires d'ouverture</h3>
           <table class="hours-table">
-            <tr><td>Lundi – Vendredi</td><td><strong>[HORAIRES À RENSEIGNER]</strong></td></tr>
-            <tr><td>Samedi</td><td><strong>[HORAIRES À RENSEIGNER]</strong></td></tr>
-            <tr class="closed"><td>Dimanche</td><td>Fermé</td></tr>
+            <tr><td>Lundi – Vendredi</td><td><strong>8h–12h &amp; 13h30–17h30</strong></td></tr>
+            <tr class="closed"><td>Samedi &amp; Dimanche</td><td>Fermé</td></tr>
           </table>
           <div style="margin-top:1.5rem;padding:1rem 1.2rem;background:linear-gradient(135deg,var(--blue),var(--blue-mid));border-radius:8px;color:#fff">
-            <div style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:.4rem">Livraison express</div>
-            <div style="font-size:.9rem;opacity:.85">Commandes passées avant <strong style="color:#fff">16h</strong> → livrées le lendemain matin</div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:.4rem">Livraison par France Alliance</div>
+            <div style="font-size:.9rem;opacity:.85">Commandes avant <strong style="color:#fff">11h30</strong> → livrées l'après-midi · Avant <strong style="color:#fff">17h30</strong> → livrées le lendemain</div>
           </div>
         </div>
         <div style="flex:1;min-width:280px">
@@ -2070,14 +2076,14 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
           <h3>1. Éditeur du site</h3>
           <p><strong>EUROGAM</strong><br>
           8 rue de Prony, 37300 Joué-lès-Tours<br>
-          Téléphone : 02 47 73 96 65<br>
-          Email : <a href="mailto:[EMAIL À RENSEIGNER]" style="color:var(--orange)">[ADRESSE EMAIL À RENSEIGNER]</a><br>
-          Directeur de la publication : [NOM DU RESPONSABLE À RENSEIGNER]</p>
+          Téléphone : 02 47 73 07 08<br>
+          Email : <a href="mailto:contact@groupe-eurogam.fr" style="color:var(--orange)">contact@groupe-eurogam.fr</a><br>
+          Directeur de la publication : Rodolphe Durand</p>
         </div>
 
         <div class="legal-section">
           <h3>2. Hébergement</h3>
-          <p>Ce site est hébergé par [NOM DE L'HÉBERGEUR À RENSEIGNER], dont le siège social est situé à [ADRESSE DE L'HÉBERGEUR À RENSEIGNER].</p>
+          <p>Ce site est hébergé par <strong>Infomaniak Network SA</strong>, dont le siège social est situé au 25 Eugène-Marziano, 1227 Les Acacias, Genève, Suisse. <a href="https://www.infomaniak.com" target="_blank" rel="noopener" style="color:var(--orange)">www.infomaniak.com</a></p>
         </div>
 
         <div class="legal-section">
@@ -2121,7 +2127,7 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
             <li><strong>Droit d'opposition</strong> : vous opposer à tout traitement</li>
             <li><strong>Droit à la portabilité</strong> : récupérer vos données dans un format lisible</li>
           </ul>
-          <p style="margin-top:.8rem">Pour exercer ces droits, contactez-nous : <a href="mailto:contact@eurogam.fr" style="color:var(--orange);font-weight:600">contact@eurogam.fr</a></p>
+          <p style="margin-top:.8rem">Pour exercer ces droits, contactez-nous : <a href="mailto:contact@groupe-eurogam.fr" style="color:var(--orange);font-weight:600">contact@groupe-eurogam.fr</a></p>
           <p>Vous pouvez également introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) : <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color:var(--orange)">www.cnil.fr</a></p>
         </div>
 
@@ -2135,7 +2141,7 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
         <div class="legal-section">
           <h3>6. Droit applicable</h3>
           <p>Le présent site et les présentes mentions légales sont soumis au droit français. En cas de litige, les tribunaux compétents de Joué-lès-Tours (Indre-et-Loire) seront seuls compétents.</p>
-          <p style="font-size:.8rem;color:var(--gray-mid);margin-top:1rem">Dernière mise à jour : Avril 2025</p>
+          <p style="font-size:.8rem;color:var(--gray-mid);margin-top:1rem">Dernière mise à jour : Octobre 2026</p>
         </div>
 
       </div>
@@ -2167,7 +2173,25 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
       </div>
       <div class="footer-col">
         <h4>Marques</h4>
-        <ul><li><a href="#">Bosch</a></li><li><a href="#">Sasic</a></li><li><a href="#">Dayco</a></li><li><a href="#">Mahle</a></li><li><a href="#">Cevam</a></li><li><a href="#">SBS</a></li></ul>
+        <ul>
+          <li><a href="#" onclick="goToBrand('Filtration');return false;">Mahle</a></li>
+          <li><a href="#" onclick="goToBrand('Distribution');return false;">Dayco</a></li>
+          <li><a href="#" onclick="goToBrand('Freinage');return false;">Sasic</a></li>
+          <li><a href="#" onclick="goToBrand('Electricite');return false;">Cevam</a></li>
+          <li><a href="#" onclick="goToBrand('Freinage');return false;">SBS</a></li>
+          <li><a href="#" onclick="goToBrand('Filtration');return false;">NGK</a></li>
+          <li><a href="#" onclick="goToBrand('Filtration');return false;">Mann Filter</a></li>
+          <li><a href="#" onclick="goToBrand('Suspensions');return false;">Febi</a></li>
+          <li><a href="#" onclick="goToBrand('Huiles-et-Fluides');return false;">Fuchs</a></li>
+          <li><a href="#" onclick="goToBrand('Moteur');return false;">Elring</a></li>
+          <li><a href="#" onclick="goToBrand('Eclairage');return false;">Hella</a></li>
+          <li><a href="#" onclick="goToBrand('Pneumatiques');return false;">Kléber</a></li>
+          <li><a href="#" onclick="goToBrand('Pneumatiques');return false;">Uniroyal</a></li>
+          <li><a href="#" onclick="goToBrand('Pneumatiques');return false;">Sailun</a></li>
+          <li><a href="#" onclick="goToBrand('Huiles-et-Fluides');return false;">DIFRAMA</a></li>
+          <li><a href="#" onclick="goToBrand('Huiles-et-Fluides');return false;">LECOY</a></li>
+          <li><a href="#" onclick="goToBrand('Electricite');return false;">Bosch</a></li>
+        </ul>
       </div>
       <div class="footer-col">
         <h4>Légal</h4>
@@ -2176,7 +2200,7 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
     </div>
     <div class="footer-bottom">
       <span>© 2024 EUROGAM – Joué-lès-Tours (37)</span>
-      <span>pièces auto Joué-lès-Tours · distributeur pièces auto · Bosch · Mahle · Dayco · Sasic · Cevam · SBS</span>
+      <span>Sasic · Mahle · Dayco · NGK · Mann Filter · Cevam · Febi · Fuchs · Elring · Hella · SBS · Bosch · Kléber · Uniroyal · Sailun · DIFRAMA · LECOY · NTS</span>
     </div>
   </div>
 </footer>
@@ -2249,7 +2273,7 @@ function renderOffres(){
         <div class="offre-badge-promo">${_sanitize(o.badge)}</div>
         <div class="offre-slogan">${_sanitize(o.slogan)}</div>
         <p class="offre-desc">${_sanitize(o.desc)}</p>
-        <button class="offre-cta" onclick="showPage('contact')">Demander un devis →</button>
+        <button class="offre-cta" onclick="showPage('contact')">Nous contacter →</button>
       </div>
     </div>`).join(''); }
   const full = document.getElementById('offres-full-container');
@@ -2261,7 +2285,7 @@ function renderOffres(){
         <div class="offre-full-slogan">${_sanitize(o.slogan)}</div>
         <p class="offre-full-desc">${_sanitize(o.desc)}</p>
         <div class="offre-full-actions">
-          <button class="btn-primary" onclick="showPage('contact')">Demander un devis</button>
+          <button class="btn-primary" onclick="showPage('contact')">Nous contacter</button>
         </div>
       </div>
     </div>`).join(''); }
@@ -2731,6 +2755,10 @@ function navMobile(page) {
 }
 
 /* ==== MODALS CATEGORIES ==== */
+function goToBrand(catId) {
+  showPage('produits');
+  setTimeout(function(){ openCatModal(catId); }, 350);
+}
 function openCatModal(id) {
   var m = document.getElementById('cat-modal-' + id);
   if (m) {
@@ -2789,10 +2817,6 @@ document.addEventListener('keydown', function(e) {
     <div class="cat-modal-body">
       <div class="cat-modal-marques">
         <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">Bosch</div>
-          <div class="cat-modal-marque-desc">Filtres air, huile, gasoil et habitacle — leader mondial OE.</div>
-        </div>
-        <div class="cat-modal-marque">
           <div class="cat-modal-marque-nom">Mahle</div>
           <div class="cat-modal-marque-desc">Filtres qualité OE allemand, partenaire constructeurs premium.</div>
         </div>
@@ -2809,7 +2833,7 @@ document.addEventListener('keydown', function(e) {
   <div class="cat-modal-box">
     <div class="cat-modal-header">
       <button type="button" class="cat-modal-close" onclick="closeCatModal('Huiles-et-Fluides')" aria-label="Fermer">✕</button>
-      <div class="cat-modal-title">Huiles &amp; Fluides</div>
+      <div class="cat-modal-title">Huiles</div>
       <div class="cat-modal-subtitle">Marques distribuées</div>
     </div>
     <div class="cat-modal-body">
@@ -2819,25 +2843,14 @@ document.addEventListener('keydown', function(e) {
           <div class="cat-modal-marque-desc">Lubrifiants spécialité, leader mondial indépendant.</div>
         </div>
         <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">Excel HDI</div>
-          <div class="cat-modal-marque-desc">Huiles diesel HDi/TDi et boîte.</div>
+          <div class="cat-modal-marque-nom">Fuchs Labo</div>
+          <div class="cat-modal-marque-desc">Gamme laboratoire Fuchs, lubrifiants techniques haute performance.</div>
         </div>
-        <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">Frio Pro OT</div>
-          <div class="cat-modal-marque-desc">Liquide refroidissement −37°C.</div>
-        </div>
-        <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">Euro Act</div>
-          <div class="cat-modal-marque-desc">Lubrifiants polyvalents ateliers pros.</div>
-        </div>
-        <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">LECOY</div>
-          <div class="cat-modal-marque-desc">Lave-glace concentré français, efficace dès −20°C.</div>
-        </div>
-        <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">DIFRAMA</div>
-          <div class="cat-modal-marque-desc">AdBlue urée 32,5% Euro 6, bidons et fûts.</div>
-        </div>
+
+
+
+
+
       </div>
     </div>
   </div>
@@ -2857,8 +2870,8 @@ document.addEventListener('keydown', function(e) {
           <div class="cat-modal-marque-desc">Kits distribution complets avec pompe à eau — OE Fiat/Renault/PSA/Ford/VW.</div>
         </div>
         <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">Elring</div>
-          <div class="cat-modal-marque-desc">Joints moteur allemand, joints de culasse qualité OE.</div>
+          <div class="cat-modal-marque-nom">Sasic</div>
+          <div class="cat-modal-marque-desc">Kits distribution et courroies — OE Renault/PSA/Citroën.</div>
         </div>
       </div>
     </div>
@@ -2869,18 +2882,26 @@ document.addEventListener('keydown', function(e) {
   <div class="cat-modal-box">
     <div class="cat-modal-header">
       <button type="button" class="cat-modal-close" onclick="closeCatModal('Suspensions')" aria-label="Fermer">✕</button>
-      <div class="cat-modal-title">Suspensions &amp; Châssis</div>
+      <div class="cat-modal-title">Suspensions &amp; Train avant</div>
       <div class="cat-modal-subtitle">Marques distribuées</div>
     </div>
     <div class="cat-modal-body">
       <div class="cat-modal-marques">
         <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">ZF</div>
+          <div class="cat-modal-marque-desc">Amortisseurs Sachs, train avant — première monte constructeurs.</div>
+        </div>
+        <div class="cat-modal-marque">
           <div class="cat-modal-marque-nom">Sasic</div>
-          <div class="cat-modal-marque-desc">Bras triangles, biellettes, rotules.</div>
+          <div class="cat-modal-marque-desc">Bras triangles, biellettes, rotules — OE Renault/PSA.</div>
+        </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">NK</div>
+          <div class="cat-modal-marque-desc">Roulements et moyeux, large couverture parc.</div>
         </div>
         <div class="cat-modal-marque">
           <div class="cat-modal-marque-nom">Febi</div>
-          <div class="cat-modal-marque-desc">Pièces châssis et direction allemand, tolérances OE.</div>
+          <div class="cat-modal-marque-desc">Pièces châssis et direction, tolérances OE.</div>
         </div>
       </div>
     </div>
@@ -2891,22 +2912,18 @@ document.addEventListener('keydown', function(e) {
   <div class="cat-modal-box">
     <div class="cat-modal-header">
       <button type="button" class="cat-modal-close" onclick="closeCatModal('Electricite')" aria-label="Fermer">✕</button>
-      <div class="cat-modal-title">Électricité &amp; Capteurs</div>
+      <div class="cat-modal-title">Allumage</div>
       <div class="cat-modal-subtitle">Marques distribuées</div>
     </div>
     <div class="cat-modal-body">
       <div class="cat-modal-marques">
         <div class="cat-modal-marque">
           <div class="cat-modal-marque-nom">Cevam</div>
-          <div class="cat-modal-marque-desc">Démarreurs et alternateurs, large couverture parc européen.</div>
+          <div class="cat-modal-marque-desc">Machines tournantes : démarreurs, alternateurs — large couverture parc européen.</div>
         </div>
         <div class="cat-modal-marque">
           <div class="cat-modal-marque-nom">NGK</div>
-          <div class="cat-modal-marque-desc">Sondes lambda, capteurs température, débitmètres OE.</div>
-        </div>
-        <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">MTS</div>
-          <div class="cat-modal-marque-desc">Modules EGR, capteurs et actionneurs.</div>
+          <div class="cat-modal-marque-desc">Bougies d'allumage, bougies de préchauffage, faisceaux — qualité OE.</div>
         </div>
       </div>
     </div>
@@ -2927,8 +2944,8 @@ document.addEventListener('keydown', function(e) {
           <div class="cat-modal-marque-desc">Fabricant français, kits embrayage OE Renault/PSA/Citroën.</div>
         </div>
         <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">Dayco</div>
-          <div class="cat-modal-marque-desc">Kits embrayage complets avec courroies et tendeurs.</div>
+          <div class="cat-modal-marque-nom">ZF</div>
+          <div class="cat-modal-marque-desc">Kits embrayage ZF Sachs : disque, mécanisme, butée.</div>
         </div>
       </div>
     </div>
@@ -2945,8 +2962,8 @@ document.addEventListener('keydown', function(e) {
     <div class="cat-modal-body">
       <div class="cat-modal-marques">
         <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">Mondial Batterie</div>
-          <div class="cat-modal-marque-desc">Batteries 12V VL et utilitaires, rapport capacité/prix optimisé.</div>
+          <div class="cat-modal-marque-nom">Batteries 12V</div>
+          <div class="cat-modal-marque-desc">Batteries voitures et utilitaires : standard, AGM, EFB start/stop.</div>
         </div>
       </div>
     </div>
@@ -2966,6 +2983,10 @@ document.addEventListener('keydown', function(e) {
           <div class="cat-modal-marque-nom">Mahle / Behr-Mahle</div>
           <div class="cat-modal-marque-desc">Composants moteur OE qualité allemande — partenaire BMW/Mercedes/VW.</div>
         </div>
+        <div class="cat-modal-marque">
+          <div class="cat-modal-marque-nom">Elring</div>
+          <div class="cat-modal-marque-desc">Joints moteur et joints de culasse qualité OE allemande.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -2975,7 +2996,7 @@ document.addEventListener('keydown', function(e) {
   <div class="cat-modal-box">
     <div class="cat-modal-header">
       <button type="button" class="cat-modal-close" onclick="closeCatModal('Refroidissement')" aria-label="Fermer">✕</button>
-      <div class="cat-modal-title">Refroidissement</div>
+      <div class="cat-modal-title">Clim &amp; Refroidissement</div>
       <div class="cat-modal-subtitle">Marques distribuées</div>
     </div>
     <div class="cat-modal-body">
@@ -2986,7 +3007,7 @@ document.addEventListener('keydown', function(e) {
         </div>
         <div class="cat-modal-marque">
           <div class="cat-modal-marque-nom">Sasic</div>
-          <div class="cat-modal-marque-desc">Pompes à eau et composants refroidissement.</div>
+          <div class="cat-modal-marque-desc">Pompes à eau, thermostats et composants refroidissement — OE Renault/PSA.</div>
         </div>
       </div>
     </div>
@@ -3039,8 +3060,8 @@ document.addEventListener('keydown', function(e) {
     <div class="cat-modal-body">
       <div class="cat-modal-marques">
         <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">Équipement multi-marques</div>
-          <div class="cat-modal-marque-desc">Silencieux, catalyseurs, sondes lambda, flexibles inox.</div>
+          <div class="cat-modal-marque-nom">NTS</div>
+          <div class="cat-modal-marque-desc">Silencieux, catalyseurs, flexibles et colliers d'échappement.</div>
         </div>
       </div>
     </div>
@@ -3057,8 +3078,8 @@ document.addEventListener('keydown', function(e) {
     <div class="cat-modal-body">
       <div class="cat-modal-marques">
         <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">Bosch</div>
-          <div class="cat-modal-marque-desc">Ampoules et projecteurs, gamme complète auto.</div>
+          <div class="cat-modal-marque-nom">Hella</div>
+          <div class="cat-modal-marque-desc">Ampoules, phares et feux — équipementier OE référence.</div>
         </div>
       </div>
     </div>
@@ -3087,18 +3108,18 @@ document.addEventListener('keydown', function(e) {
   <div class="cat-modal-box">
     <div class="cat-modal-header">
       <button type="button" class="cat-modal-close" onclick="closeCatModal('Vitrage-et-Essuyage')" aria-label="Fermer">✕</button>
-      <div class="cat-modal-title">Vitrage &amp; Essuyage</div>
+      <div class="cat-modal-title">Essuyage</div>
       <div class="cat-modal-subtitle">Marques distribuées</div>
     </div>
     <div class="cat-modal-body">
       <div class="cat-modal-marques">
         <div class="cat-modal-marque">
           <div class="cat-modal-marque-nom">Bosch</div>
-          <div class="cat-modal-marque-desc">Aerotwin et Twin, les plus vendus en Europe.</div>
+          <div class="cat-modal-marque-desc">Balais Aerotwin et Twin, les plus vendus en Europe.</div>
         </div>
         <div class="cat-modal-marque">
-          <div class="cat-modal-marque-nom">Trico</div>
-          <div class="cat-modal-marque-desc">Pionnier depuis 1917, balais plats et classiques.</div>
+          <div class="cat-modal-marque-nom">Hella</div>
+          <div class="cat-modal-marque-desc">Balais essuie-glace OE, couverture parc européen.</div>
         </div>
       </div>
     </div>
@@ -3132,4 +3153,5 @@ document.addEventListener('keydown', function(e) {
 </div>
 
 </body>
-</html>
+</html
+              <div style="font-size:.8rem;opacity:.7;margin-top:.3rem">Lun–Ven · 8h–12h et 13h30–17h30</div>>
