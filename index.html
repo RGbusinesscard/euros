@@ -35,10 +35,10 @@ h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;letter-spacing:.02em}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
  
 /* TICKER */
-.ticker-bar{background:var(--orange);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;overflow:hidden;white-space:nowrap;padding:7px 0}
-.ticker-inner{display:inline-block;animation:ticker 45s linear infinite}
+.ticker-bar{background:var(--orange);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;overflow:hidden;white-space:nowrap;padding:7px 0;position:relative}
+.ticker-inner{display:inline-block;animation:ticker 45s linear infinite;will-change:transform}
 .ticker-inner span{margin:0 3rem}
-@keyframes ticker{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
  
 /* HEADER */
 header{background:var(--blue);position:sticky;top:0;z-index:1000;box-shadow:0 2px 16px rgba(0,0,0,.25);overflow:visible}
@@ -380,7 +380,9 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
   .products-grid,.pricing-grid,.adv-grid,
   .footer-top{grid-template-columns:1fr}
   .testi-grid{grid-template-columns:repeat(2,1fr)}
-  
+  .counters-grid{grid-template-columns:1fr;gap:1.2rem}
+  .counter-item::after{display:none}
+  .counter-num{font-size:2.8rem}
   .admin-row{grid-template-columns:1fr}
 }
 
@@ -1452,7 +1454,7 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
 <!-- TICKER -->
 <div class="ticker-bar">
   <div class="ticker-inner">
-    <span>Livraison express</span><span>+40 ans d'expertise automobile</span><span>Pièces auto multimarques professionnels</span><span>Joué-lès-Tours – Indre-et-Loire</span><span>Sasic · Dayco · Mahle · Cevam · SBS · NGK · Mann Filter · Febi · Fuchs · Elring · Hella</span><span>Offres du moment – Économisez dès aujourd'hui</span><span>Livraison express par France Alliance</span><span>+40 ans d'expertise automobile</span><span>Pièces auto multimarques professionnels</span><span>Joué-lès-Tours – Indre-et-Loire</span><span>Sasic · Dayco · Mahle · Cevam · SBS · NGK · Mann Filter · Febi · Fuchs · Elring · Hella</span><span>Offres du moment – Économisez dès aujourd'hui</span>
+    <span>Livraison express</span><span>+40 ans d'expertise automobile</span><span>Pièces auto multimarques professionnels</span><span>Joué-lès-Tours – Indre-et-Loire</span><span>Sasic · Dayco · Mahle · Cevam · SBS · Sachs · Fuchs · Elring · Hella</span><span>Offres du moment – Économisez dès aujourd'hui</span><span>Livraison express par France Alliance</span><span>+40 ans d'expertise automobile</span><span>Pièces auto multimarques professionnels</span><span>Joué-lès-Tours – Indre-et-Loire</span><span>Sasic · Dayco · Mahle · Cevam · SBS · Sachs · Fuchs · Elring · Hella</span><span>Offres du moment – Économisez dès aujourd'hui</span>
   </div>
 </div>
  
@@ -1557,9 +1559,9 @@ footer{background:#0d1f33;color:rgba(255,255,255,.7)}
       <div class="section-label reveal">Pourquoi EUROGAM</div>
       <h2 class="section-title reveal">Des avantages concrets<br>pour votre garage</h2>
       <div class="adv-grid">
-        <div class="adv-card reveal d1"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="adv-title">Livraison Express</div><p class="adv-text">Livraison express par France Alliance. Commandez avant 11h30, livraison l'après-midi.</p></div>
+        <div class="adv-card reveal d1"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="adv-title">Livraison Express</div><p class="adv-text">Livraison express par France Alliance. Commandes avant 11h30, livraison l'après-midi. Commandes avant 17h30, livraison lendemain matin. Autres horaires pour l'agglomération de Tours.</p></div>
         <div class="adv-card reveal d2"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg></div><div class="adv-title">Proximité Locale</div><p class="adv-text">Ancré à Joué-lès-Tours, nous connaissons les besoins des professionnels de la région Centre-Val de Loire.</p></div>
-        <div class="adv-card reveal d3"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div class="adv-title">Équipementiers première monte</div><p class="adv-text">Sasic, Dayco, Mahle, NGK, Cevam, Hella : uniquement des équipementiers première monte reconnus pour leurs standards de qualité.</p></div>
+        <div class="adv-card reveal d3"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div class="adv-title">Équipementiers première monte</div><p class="adv-text">Dayco, Mahle, Hella, Sachs : des équipementiers 1ère monte reconnus pour leurs produits de qualité.</p></div>
         <div class="adv-card reveal d4"><div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><path d="M12 6v2M12 16v2M8 12h8"/></svg></div><div class="adv-title">Tarifs Professionnels</div><p class="adv-text">Un réseau fournisseurs solide. Des prix compétitifs adaptés aux volumes des professionnels.</p></div>
       </div>
     </div>
@@ -3153,5 +3155,4 @@ document.addEventListener('keydown', function(e) {
 </div>
 
 </body>
-</html
-              <div style="font-size:.8rem;opacity:.7;margin-top:.3rem">Lun–Ven · 8h–12h et 13h30–17h30</div>>
+</html>
